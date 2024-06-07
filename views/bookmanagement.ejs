@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrower Management</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+</head>
+<body>
+    <%- include('./partials/moderatornav.ejs') %>
+    <% books.forEach(book => {%>
+    <% if (book.borrowers==false) { %>
+      <%= '' %>
+     <% } else {%>
+    <div class="bookCard" id="bookCard">
+          <div class="book">
+            <span class="bookInfo" id="title">Book Title: <%= book.title %></span>
+          <span class="bookInfo" id="price">Book Quantity: <%= book.quantity %></span>
+          <ol class="bookInfo" id="price"><h3>Borrowers:</h3>
+          <% book.borrowers.forEach(borrower => { %>
+              <li>
+             <div><label for="li">Username: </label><%= borrower.username %></div>
+            <div><label for="li">Email: </label><%= borrower.email %></div>
+            <div><label for="li">Role: </label><%= borrower.role %></div>
+            <div class="bookInfo" id="btns">
+              <input type="button" value="Send Reminder" class="choices borrow approve" data-userid="<%= borrower.id %>" data-method="DELETE" data-bookid="<%= book.id %>" />
+              <input type="button" style="background-color: rgb(223, 2, 2);" value="Returned" data-userid="<%= borrower.id %>" data-method="PATCH" data-bookid="<%= book.id %>" class="choices decline" id="decline" />
+            </div>
+            </li>
+            <% }) %></ol>
+            <!-- Add other book info here -->
+          </div>
+        </div>
+        <% } %>
+        <% }) %>
+      <script src="../public/js/borrowManagement.js"></script>
+</body>
+</html>

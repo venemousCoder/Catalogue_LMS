@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Requests</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+</head>
+<body>
+    <%- include('./partials/moderatornav.ejs') %>
+    <div class="bookCard" id="bookCard">
+        <% books.forEach(request => {%>
+          <div class="book">
+            <span class="bookInfo" id="title">Username: <%= request.requester.username %></span>
+          <span class="bookInfo" id="price">Book Title: <%= request.bookRequested.title %></span>
+          <span class="bookInfo" id="price"
+          >Date issued: <%= request.createdAt %></span
+          >
+          <!-- Add other book info here -->
+          <div class="bookInfo" id="btns">
+            <input type="button" value="Approve" class="choices borrow approve" data-requestid="<%= request.id %>" data-method="PATCH" />
+            <input type="button" style="background-color: rgb(223, 2, 2);" value="Decline" data-requestid="<%= request.id %>" data-method="DELETE" class="choices decline" id="decline" />
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <% if (!books) { %>
+       <h2>No Notifications</h2>
+      <% } %>
+      <script src="../public/js/requestApproval.js"></script>
+</body>
+</html>

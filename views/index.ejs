@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/styles.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <h4 class="hidden" id="searchInfo"></h4>
+    <div class="bookCard hidden" id="searchRes"></div>
+    <h2 class="intro">Books</h2>
+    <div class="bookCard" id="bookCard">
+      <% for (let i = 0; i < books.length; i++) { %>
+      <div class="book">
+        <div class="image bookInfo">
+          <img src="../public/images/<%= books[i].imageUrl %>.jpeg" alt="<%= books[i].title %> book preview image" />
+        </div>
+        <span class="bookInfo" id="title">Title: <%= books[i].title %></span>
+        <span class="bookInfo" id="price">Price: $<%= books[i].price %></span>
+        <span class="bookInfo" id="price">Description: <%= books[i].desc %></span>
+        <!-- Add other book info here -->
+        <div class="bookInfo" id="btns">
+          <input type="button"
+          <% if (currentUser) { %>
+           <% if (books[i].pendingBorrower.includes(currentUser.id)||books[i].borrowers.includes(currentUser.id)) { %>
+            disabled
+            <% } %>
+            <% } %>
+          value="Borrow" class="choices borrow" data-bookid="<%= books[i].id %>" />
+          <input type="button" value="Add To Wishlist" class="choices" id="wishlist" />
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <script src="../public/js/script.js"></script>
+  </body>
+</html>

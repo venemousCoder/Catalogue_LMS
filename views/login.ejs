@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+  </head>
+  <body>
+    <div class="formContainer">
+    <form action="login" method="post">
+      <h3  class="fields" id="formHead">Login</h3>
+      <%# if (error) { %>
+        <%# error %>
+      <%# }else{ %>
+        <%#= '' %>
+        <%# } %>
+      <span class="fields" >Username: <input type="text" name="username" id="username" placeholder="arai670@blackmail.com" /></span>
+      <span class="fields" >Password: <input type="password" name="password" placeholder="****" /></span>
+        <input  class="fields submit" type="submit" value="Login"/>
+    </form>
+    <h4>Don't have an account? <a href="create" style="text-decoration: underline;">Create one</a></h4>
+  </div>
+  </body>
+</html>

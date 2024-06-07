@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../public/css/styles.css"/>
+  </head>
+  <body>
+    <%-include('./partials/moderatornav.ejs') %>
+    <div class="container">
+      <div class="sidebar">
+        <h3>Menu</h3>
+        <h1>Profile</h1>
+        <div class="section" id="profile-information">
+          <h2>Profile Information</h2>
+          <p>Username: <%= currentUser.username %></p>
+          <p>Contact Details: <%= currentUser.email %></p>
+        </div>
+        <div class="section" id="account-settings">
+          <h2>Account Settings</h2>
+        </div>
+        <ul>
+          <li><a href="#">Profile Information</a></li>
+          <li><a href="#">Account Settings</a></li>
+          <li><a href="#">Bookshelf</a></li>
+          <li><a href="/admin/notifications">Borrow Requests</a></li>
+          <li><a href="borrowmanagement">Borrowed Books</a></li>
+        </ul>
+        <div class="section" id="notifications">
+          <h2>Notifications</h2>
+          <div class="notifications">
+            <ul>
+              <li><a href="#">New Book Available</a></li>
+              <li><a href="#">Reminder: Return Book</a></li>
+              <!-- More notifications here -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="section" id="bookshelf">
+          <h2>All books</h2>
+          <div class="bookshelf">
+            <div class="bookCard" id="bookCard">
+              <% data.forEach(book => {  %>
+              <div class="book">
+                <div class="image bookInfo">
+                  <img src="../public/images/<%= book.imageUrl %>.jpeg" alt="<%= book.title %> book preview image" />
+                </div>
+                <span class="bookInfo" id="title">Title: <%= book.title %></span>
+                <span class="bookInfo" id="price">Price: $<%= book.price %></span>
+                <span class="bookInfo" id="price">Description: <%= book.desc %></span>
+                <!-- Add other book info here -->
+                <div class="bookInfo" id="btns">
+                  <input type="button" value="Delete" class="choices borrow delete" data-bookid="<%= book.id %>" data-method="delete"/>
+                  <button type="button" value="" class="choices update" data-bookid="<%= book.id %>" data-method="update"><a href=  <%= `moderator/updateBook/${book.id}` %>>Update</a></button>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+            <!-- More books here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../public/js/bookManagement.js"></script>
+  </body>
+</html>

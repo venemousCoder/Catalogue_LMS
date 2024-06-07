@@ -1,0 +1,14 @@
+<nav>
+  <div class="navs" id="home"><a href="/">Home</a></div>
+  <div class="navs" id="Contact"><a href="#">Contact</a></div>
+  <div class="navs" id="search">
+    <input type="text" id="searchBar" placeholder="Search books...">
+    <button id="searchbtn">Search</button>
+</div>
+  <% if (loggedIn) { %>
+  <div class="navs" id="logout"><a href="/user/profile">Profile</a></div>
+  <div class="navs" id="logout"><a href="/user/logout">logout</a></div>
+  <% } else {%>
+  <div class="navs" id="login"><a href="/user/login">login</a></div>
+  <% } %>
+</nav>

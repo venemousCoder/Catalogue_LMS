@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container">
+      <div class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="#">Profile Information</a></li>
+          <li><a href="#">Account Settings</a></li>
+          <li><a href="#">Bookshelf</a></li>
+          <li><a href="#">Wishlist</a></li>
+          <li><a href="#">Notifications</a></li>
+          <li><a href="#">Report an Issue</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h1>User Profile</h1>
+        <div class="section" id="profile-information">
+          <h2>Profile Information</h2>
+          <p>Username: <%= currentUser.username %></p>
+          <p>Contact Details: <%= currentUser.email %> </p>
+        </div>
+        <div class="section" id="account-settings">
+          <h2>Account Settings</h2>
+          <p>Edit Profile Information</p>
+          <p>Change Password</p>
+        </div>
+        <div class="section" id="bookshelf">
+          <h2>Bookshelf</h2>
+          <div class="bookshelf">
+            <% currentUser.booksBorrowed.forEach(booksBorrowed => { %>
+              <div class="book">
+                <img src="book1.jpg" alt="Book 1" />
+                <p><%= booksBorrowed %></p>
+              </div>
+              <% }) %>
+            <div class="book">
+              <img src="book2.jpg" alt="Book 2" />
+              <p>Book 2</p>
+            </div>
+            <!-- More books here -->
+          </div>
+        </div>
+        <div class="section" id="wishlist">
+          <h2>Wishlist</h2>
+          <div class="wishlist">
+            <ul>
+              <li>Book 3 <button>Add to Wishlist</button></li>
+              <li>Book 4 <button>Add to Wishlist</button></li>
+              <!-- More books here -->
+            </ul>
+          </div>
+        </div>
+        <div class="section" id="notifications">
+          <h2>Notifications</h2>
+          <div class="notifications">
+            <ul>
+              <li><a href="#">New Book Available</a></li>
+              <li><a href="#">Reminder: Return Book</a></li>
+              <!-- More notifications here -->
+            </ul>
+          </div>
+        </div>
+        <div class="section" id="report-issue">
+          <h2>Report an Issue</h2>
+          <div class="report-issue">
+            <button>Report Issue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

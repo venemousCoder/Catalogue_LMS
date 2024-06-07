@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Create Account</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
+  </head>
+  <body>
+    <div class="formContainer">
+      <form action="create" method="post">
+        <h3 class="fields" id="formHead">Create Account</h3>
+        <%# error %>
+        <span class="fields"
+          >Full name: <input type="text" name="username" placeholder="Aria Loe"
+        /></span>
+        <span class="fields"
+          >Email:
+          <input
+            type="email"
+            name="email"
+            id="mail"
+            placeholder="arai670@blackmail.com"
+        /></span>
+        <span class="fields"
+          >Password:
+          <input type="password" name="password" id="mail" placeholder="****"
+        /></span>
+        <span class="fields"
+          >Role:
+          <select
+            type="text"
+            name="role"
+            id="role"
+            placeholder="Teacher or Student...">
+        <option value="Teacher">Teacher</option>
+        <option value="Student">Student</option>
+        </select></span>
+        <input class="fields submit" type="submit" value="Create Account" />
+      </form>
+      <h4>
+        Already have an account?
+        <a style="text-decoration: underline" href="login">login</a>
+      </h4>
+    </div>
+  </body>
+</html>

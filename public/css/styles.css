@@ -1,0 +1,266 @@
+/* index page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(52, 197, 255);
+  color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+.intro::first-letter {
+  color: blueviolet;
+}
+
+/* Book card styles */
+
+.book img {
+  max-width: 100%;
+  height: 50vh;
+  border-radius: 8px;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #12ffcc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bookInfo {
+  margin-bottom: 10px;
+}
+
+.bookCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.infoHead {
+  color: blueviolet;
+}
+
+.submit,
+.choices {
+  background-color: blueviolet;
+  color: whitesmoke;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.choices:hover {
+  background-color: rgb(92, 29, 151);
+}
+.choices:disabled {
+  background-color: rgba(92, 29, 151, 0.432);
+  cursor: default;
+}
+
+.submit:hover {
+  background: fixed rgb(92, 29, 151);
+}
+
+/* Partials/nav */
+
+/* Navigation bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 5px rgba(3, 4, 30, 0.1);
+  background-color: rgb(71, 71, 71);
+  color: antiquewhite;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+/* ADMIN PANEL STYLES */
+
+/* add book route */
+
+.formContainer {
+  display: grid;
+  grid-template-columns: auto;
+  justify-content: center;
+}
+
+form {
+  display: block;
+  grid-template-columns: auto;
+  max-width: fit-content;
+}
+
+.fields {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 5% 0;
+}
+
+#submit {
+  max-width: 50%;
+  padding: 1vh;
+  background: fixed rgb(43, 116, 226);
+  border: rgb(43, 116, 226);
+  border-radius: 1.5vh;
+  color: antiquewhite;
+}
+
+/* PROFILE STYLES */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Sidebar and content area */
+  max-width: 100%;
+
+  margin: 20px auto;
+  padding: 20px;
+  color: antiquewhite;
+  background-color: blueviolet;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar li a {
+  color: #d7d8da;
+  text-decoration: none;
+}
+.sidebar li a::before {
+  content: "_";
+}
+
+.content {
+  padding-left: 20px;
+  width: 100%;
+  overflow-y: scroll;
+  height: 50%;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.bookshelf {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wishlist {
+  margin-bottom: 20px;
+}
+
+.wishlist ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wishlist li {
+  margin-bottom: 10px;
+}
+
+.wishlist li button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.wishlist li button:hover {
+  background-color: #0071e9;
+}
+
+.notifications {
+  margin-bottom: 20px;
+}
+
+.notifications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notifications li {
+  margin-bottom: 10px;
+}
+
+.notifications li a {
+  color: #cecece;
+  text-decoration: none;
+}
+
+.report-issue {
+  margin-bottom: 20px;
+}
+
+.report-issue button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.report-issue button:hover {
+  background-color: #bd2130;
+}
+
+/* Search button styles */
+
+#search {
+  display: flex;
+  align-items: center;
+}
+
+#search input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#search button {
+  background-color: blueviolet;
+  color: whitesmoke;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#search button:hover {
+  background-color: rgb(92, 29, 151);
+}
+
+.hidden {
+  display: none;
+}

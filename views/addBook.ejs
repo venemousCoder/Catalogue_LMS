@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <title>Add Books</title>
+  </head>
+  <body>
+    <%- include('./partials/moderatornav.ejs') %>
+    <div class="formContainer">
+      <form action="/admin/moderator/addBook" method="post">
+        <h1 class="head">Add a Book</h1>
+        <input
+          type="text"
+          name="imageUrl"
+          placeholder="Book Cover Name(picture name)"
+          class="fields"
+          id="cover"
+        />
+        <input
+          type="text"
+          name="title"
+          placeholder="Book Title"
+          class="fields"
+          id="title"
+        />
+        <input
+          type="text"
+          name="price"
+          placeholder="Book Price in $$"
+          class="fields"
+          id="price"
+        />
+        <input
+          type="text"
+          name="desc"
+          placeholder="Book Description"
+          class="fields"
+          id="desc"
+        />
+        <input
+          type="text"
+          name="author"
+          placeholder="Book Author"
+          class="fields"
+          id="author"
+        />
+        <input
+          type="text"
+          name="genre"
+          placeholder="Book Genre"
+          class="fields"
+          id="genre"
+        />
+        <div class="fields">
+          <label for="availability">Available: </label>
+          <input
+            type="checkbox"
+            name="availability"
+            id="availability"
+          />
+        </div>
+        <input
+          type="number"
+          name="quantity"
+          placeholder="Copies Available"
+          class="fields"
+          id="quantity"
+        />
+        <input type="submit" value="Add Book" id="submit" />
+      </form>
+    </div>
+  </body>
+</html>
